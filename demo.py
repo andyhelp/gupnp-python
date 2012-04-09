@@ -113,6 +113,7 @@ def device_available(cp, device):
   for service in device.list_services():
       print service.get_service_type()
       service.get_introspection_async(got_introspection, None)
+      service.get_introspection() #required to trigger got_introspection callback, not sure why?
       if "AV" in service.get_service_type():
           renderers.append(device)           
       if "ContentDirectory" in service.get_service_type():
