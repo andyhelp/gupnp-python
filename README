@@ -1,0 +1,6 @@
+Examples how to use gupnp in python.
+GUPnP bindings to python are provided trough gobject-introspection.
+
+Links:
+* https://live.gnome.org/GUPnP
+* https://live.gnome.org/GObjectIntrospection
