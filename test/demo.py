@@ -1,4 +1,4 @@
-from gi.repository import GLib, GUPnP, GSSDP, GObject, libsoup
+from gi.repository import GLib, GUPnP, GSSDP, GObject, Soup
 
 def device_available(device, cp):
   import pdb
