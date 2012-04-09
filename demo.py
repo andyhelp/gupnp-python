@@ -90,8 +90,8 @@ def list_cur_devices():
          print "\tService: %s" % s.get_service_type()
 	 if not s.get_udn() in introspections:
 	     continue
-         for a in introspections[s.get_udn()].list_actions():
-             print "\t\tAction: %s" % a.name
+         for action_name in introspections[s.get_udn()].list_action_names():
+             print "\t\tAction: %s" % action_name
 
   print "Current Sources:"
   for i in sources:
