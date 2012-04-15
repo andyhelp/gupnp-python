@@ -1,6 +1,14 @@
 Examples how to use gupnp in python.
 GUPnP bindings to python are provided trough gobject-introspection.
 
+
+$ python demo.py
+It displays UPnP devices, services and actions.
+
+$ python test/demo.py
+It starts pdb when first UPnP device is found.
+
+
 Links:
 * https://live.gnome.org/GUPnP
 * https://live.gnome.org/GObjectIntrospection
