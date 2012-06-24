@@ -52,17 +52,18 @@ def got_introspection(service, intro, error, userdata):
           data_out = {"CurrentVolume": "" }
           service.send_action_hash(name, data, data_out)
           print "Current volume: ", data_out
-#      if i.name == "SetAVTransportURI":
-#          dict = {"Speed": "1", "InstanceID": "0"}
-#          muri = "http://192.168.1.55:49152/content/media/object_id=6327&res_id=0&ext=.mp3"
-#          curi = "http://192.168.1.55:49152/content/media/object_id=6327&res_id=0&ext=.mp3"
-#          data = {"InstanceID": "0", "CurrentURI": curi, "CurrentURIMetaData": muri} 
-#          service.send_action_hash(i.name, data, {})
-#	  print "Done setting URI"
-#          data2 = {"Speed": "1", "InstanceID": "0"}
-#          service.send_action_hash("Stop", {"InstanceID": 0}, {})
-#          print "Done Stopping"
-#          service.send_action_hash("Play", data2, {})
+      if name == "SetAVTransportURI":
+          dict = {"Speed": "1", "InstanceID": "0"}
+          muri = ""
+          curi = "http://downloads.bbc.co.uk/podcasts/radio2/whiley/whiley_20120622-1257a.mp3"
+          data = {"InstanceID": "0", "CurrentURI": curi, "CurrentURIMetaData": muri}
+          service.send_action_hash(name, data, {})
+          print "Done setting URI"
+          service.send_action_hash("Stop", {"InstanceID": 0}, {})
+          print "Done Stopping"
+          data2 = {"Speed": "1", "InstanceID": "0"}
+          service.send_action_hash("Play", data2, {})
+          print "Done Playing"
 
 
  
