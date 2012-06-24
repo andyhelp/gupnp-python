@@ -43,10 +43,15 @@ def got_introspection(service, intro, error, userdata):
   global introspections
   introspections[service.get_udn()] = intro
 
-#  actions = intro.list_actions()
-#  print len(actions)
-#  for i in actions:
-#      print service.get_service_type(), i.name      
+  actions = intro.list_action_names()
+  print "Found %d actions(s)" % len(actions)
+  for name in actions:
+      print service.get_service_type(), name
+      if name == "GetVolume":
+          data = {"InstanceID": "0", "Channel": "Master"}
+          data_out = {"CurrentVolume": "" }
+          service.send_action_hash(name, data, data_out)
+          print "Current volume: ", data_out
 #      if i.name == "SetAVTransportURI":
 #          dict = {"Speed": "1", "InstanceID": "0"}
 #          muri = "http://192.168.1.55:49152/content/media/object_id=6327&res_id=0&ext=.mp3"
