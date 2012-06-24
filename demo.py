@@ -112,8 +112,14 @@ def device_available(cp, device):
   device_services[device.get_udn()] = device.list_services()
   for service in device.list_services():
       print service.get_service_type()
-      service.get_introspection_async(got_introspection, None)
-      service.get_introspection() #required to trigger got_introspection callback, not sure why?
+#      With async callback we need to add service to global table,
+#      otherwise python frees service structure before callback is called.
+#      As a result callback is never called.
+#      Changed to get introspection and call callback in this function
+#
+#      service.get_introspection_async(got_introspection, None)
+      introspection = service.get_introspection()
+      got_introspection( service, introspection, None, None )
       if "AV" in service.get_service_type():
           renderers.append(device)           
       if "ContentDirectory" in service.get_service_type():
