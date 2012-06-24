@@ -9,11 +9,13 @@ To get demo working Gupnp 0.18.3 requires two patches:
 
 $ python demo.py
 It displays UPnP devices, services and actions.
+When GetValume action is found it is called.
+When SetAVTransport action is found it is called, then Stop and Play.
 
 $ python test/demo.py
 It starts pdb when first UPnP device is found.
 
-What doesn't work.
+What doesn't work:
 Action calls doesn't return data back to python. It is down to segmentation fault that was worakaround in second patch.
 
 
