@@ -1,5 +1,4 @@
-Examples how to use gupnp in python.
-GUPnP bindings to python are provided trough gobject-introspection.
+Examples how to use gupnp in python (with gobject-introspection).
 
 
 To get demo working Gupnp 0.18.4 requires two patches:
@@ -9,8 +8,7 @@ To get demo working Gupnp 0.18.4 requires two patches:
 
 $ python demo.py
 It displays UPnP devices, services and actions.
-When GetVolume action is found it is called.
-When SetAVTransport action is found it is called, then Stop and Play.
+Then it calls: GetVolume, SetAVTransport, Stop and Play actions (when available).
 
 $ python test/demo.py
 It starts pdb when first UPnP device is found.
