@@ -2,7 +2,7 @@ Examples how to use gupnp in python.
 GUPnP bindings to python are provided trough gobject-introspection.
 
 
-To get demo working Gupnp 0.18.3 requires two patches:
+To get demo working Gupnp 0.18.4 requires two patches:
 * https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0001-python_fix_functions_with_gerror_param.patch
 * https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0002-workaround_crash_due_to_not_valid_out_hash_param.patch
 
