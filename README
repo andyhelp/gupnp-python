@@ -1,10 +1,8 @@
 Examples how to use gupnp in python (with gobject-introspection).
 
 
-To get demo working Gupnp 0.18.4 requires two patches:
-* https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0001-python_fix_functions_with_gerror_param.patch
-* https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0002-workaround_crash_due_to_not_valid_out_hash_param.patch
-
+$ python demo-events.py
+Example with subscribing to LastChange event.
 
 $ python demo.py
 It displays UPnP devices, services and actions.
@@ -12,6 +10,12 @@ Then it calls: GetVolume, SetAVTransport, Stop and Play actions (when available)
 
 $ python test/demo.py
 It starts pdb when first UPnP device is found.
+
+
+To get demo.py working Gupnp 0.18.4 requires two patches:
+* https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0001-python_fix_functions_with_gerror_param.patch
+* https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0002-workaround_crash_due_to_not_valid_out_hash_param.patch
+
 
 What doesn't work:
 Action calls doesn't return data back to python. It is down to segmentation fault that was worakaround in second patch.
