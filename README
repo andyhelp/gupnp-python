@@ -1,6 +1,9 @@
 Examples how to use gupnp in python (with gobject-introspection).
 
 
+$python demo-dmr.py --udn=<udn> --url <url>
+Configures DMR to play specific url.
+
 $ python demo-events.py
 Example with subscribing to LastChange event.
 
@@ -12,13 +15,9 @@ $ python test/demo.py
 It starts pdb when first UPnP device is found.
 
 
-To get demo.py working Gupnp 0.18.4 requires two patches:
+To get demos working, gupnp requires one patch (tested with 0.20.0):
 * https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0001-python_fix_functions_with_gerror_param.patch
-* https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0002-workaround_crash_due_to_not_valid_out_hash_param.patch
 
-
-What doesn't work:
-Action calls doesn't return data back to python. It is down to segmentation fault that was worakaround in second patch.
 
 
 Links:
