@@ -5,7 +5,7 @@ from optparse import OptionParser
 def device_available(cp, device):
   print "New device: ", device.get_friendly_name(), device.get_udn()
 
-  if device.get_udn() != options.udn:
+  if device.get_udn() != options.dmr_udn:
     return
   print "Found device \"%s\" with matching udn" % device.get_friendly_name()
   rc_service = device.get_service("urn:schemas-upnp-org:service:RenderingControl")
@@ -25,11 +25,11 @@ def device_available(cp, device):
 
 
 parser = OptionParser()
-parser.add_option("", "--udn", dest="udn")
+parser.add_option("", "--dmr-udn", dest="dmr_udn")
 parser.add_option("", "--url", dest="url")
 
 (options, args) = parser.parse_args()
-print "Config: udn=%s, url=%s" %(options.udn, options.url)
+print "Config: dmr-udn=%s, url=%s" %(options.dmr_udn, options.url)
 
 ctx = GUPnP.Context(interface="eth0")
 ctx.init(None)

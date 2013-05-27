@@ -1,7 +1,7 @@
 Examples how to use gupnp in python (with gobject-introspection).
 
 
-$python demo-dmr.py --udn=<udn> --url <url>
+$python demo-dmc.py --dmr-udn <udn> --url <url>
 Configures DMR to play specific url.
 
 $ python demo-events.py
