@@ -15,8 +15,8 @@ $ python test/demo.py
 It starts pdb when first UPnP device is found.
 
 
-To get demos working, gupnp requires one patch (tested with 0.20.0):
-* https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches/0001-python_fix_functions_with_gerror_param.patch
+To get above examples working, gupnp requires patches from (tested with 0.20.0):
+* https://github.com/andyhelp/pkg-gupnp/blob/master/debian/patches
 
 
 
