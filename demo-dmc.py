@@ -2,6 +2,11 @@ from gi.repository import GUPnP, GSSDP, GObject
 from optparse import OptionParser
 
 
+def get_mute_cb(service, action, user_data):
+  ret = service.end_action_hash(action,{"CurrentMute": "" })
+  print "GetMute cb:", ret
+
+
 def device_available(cp, device):
   print "New device: ", device.get_friendly_name(), device.get_udn()
 
@@ -10,6 +15,7 @@ def device_available(cp, device):
   print "Found device \"%s\" with matching udn" % device.get_friendly_name()
   rc_service = device.get_service("urn:schemas-upnp-org:service:RenderingControl")
   if rc_service:
+    rc_service.begin_action_hash("GetMute", get_mute_cb, None, {"InstanceID": "0", "Channel": "Master"})
     currentVolume = rc_service.send_action_hash("GetVolume", {"InstanceID": "0", "Channel": "Master"},  {"CurrentVolume": "" })
     print "GetVolume:", currentVolume
   
